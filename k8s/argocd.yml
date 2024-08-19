@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/sboy99/argocd-test.git"
     targetRevision: HEAD # Can be a specific branch, commit, or tag
-    path: k8s/nginx/overlays/dev # Path to the Kustomize or Helm chart in your repo
+    path: nginx/overlays/dev # Path to the Kustomize or Helm chart in your repo
   destination:
     server: "https://kubernetes.default.svc"
     namespace: nginx-dev
