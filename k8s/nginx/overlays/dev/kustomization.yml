@@ -2,7 +2,7 @@ resources:
   - ../../base
 
 patches:
-  - path: deployment-patch.yaml
+  - path: deployment-patch.yml
 
 namespace: nginx-dev
 namePrefix: dev-
