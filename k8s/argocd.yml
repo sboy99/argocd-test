@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/sboy99/argocd-test.git"
+    targetRevision: HEAD # Can be a specific branch, commit, or tag
+    path: k8s/nginx/overlays/dev # Path to the Kustomize or Helm chart in your repo
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: nginx-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
